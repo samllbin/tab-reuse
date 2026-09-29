@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tab Reuse</title>
+    <link rel="stylesheet" href="popup.css">
+    <script type="module" src="popup.js"></script>
+  </head>
+  <body>
+    <main>
+      <header class="header">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 28 28" fill="none">
+            <rect x="5" y="5" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.8" opacity=".5"/>
+            <rect x="9" y="9" width="14" height="14" rx="4" fill="var(--accent)" stroke="currentColor" stroke-width="1.8"/>
+            <path d="m13 16 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div>
+          <p class="eyebrow">TAB REUSE</p>
+          <h1>链接只开一次</h1>
+        </div>
+      </header>
+
+      <form id="open-form">
+        <label class="field-label" for="url">要打开的链接</label>
+        <input id="url" name="url" type="url" placeholder="https://example.com" autocomplete="off" spellcheck="false" required disabled>
+        <div class="actions">
+          <button id="reuse-button" class="button button-primary" type="submit" disabled>
+            <span>优先复用</span><span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button id="new-button" class="button button-secondary" type="button" disabled>强制新开</button>
+        </div>
+      </form>
+
+      <div id="status" class="status" role="status" aria-live="polite" aria-atomic="true">正在读取当前标签页…</div>
+
+      <section class="settings" aria-label="标签页设置">
+        <label class="toggle-row" for="enabled">
+          <span>自动复用新打开的重复链接</span>
+          <input id="enabled" type="checkbox" checked disabled>
+          <span class="toggle-track" aria-hidden="true"></span>
+        </label>
+        <p class="note">完整链接匹配，强制新开保留独立 tab，已经打开的页面不会被自动关闭。</p>
+      </section>
+      <footer>少一点重复，多一点专注。</footer>
+    </main>
+  </body>
+</html>

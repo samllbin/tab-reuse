@@ -1,0 +1,11 @@
+.DS_Store
+node_modules/
+__pycache__/
+*.pyc
+/dist/
+/.tools/
+/*.zip
+/VERIFICATION.md
+/live-verification*.json
+/popup-preview.png
+/tests/popup-preview.html

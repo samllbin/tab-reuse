@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Reuse · 复用标签页",
+  "version": "1.1.0",
+  "description": "打开相同链接时优先回到已有标签页，也可通过按钮或右键菜单强制新开。",
+  "minimum_chrome_version": "102",
+  "permissions": ["tabs", "storage", "contextMenus"],
+  "incognito": "not_allowed",
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_title": "Tab Reuse", "default_popup": "popup.html" }
+}
